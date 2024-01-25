@@ -41,3 +41,35 @@ https://randomkeygen.com/
 ```
 uvicorn src.main:app --reload
 ```
+
+### Адрес документации
+В FastApi встроен Swager. Для ипользования необходимо перейти по адресу:
+http://hostname/docs
+
+### Создание миграций:
+
+В файле migrations/env.py
+
+Импортируем метаданные из модели
+
+```python
+from src.auth.models import metadata as auth_meta
+```
+
+В массив target_metadata добавляем импортируем метаданные
+
+```python
+target_metadata = [auth_meta]
+```
+
+Создаем ревизию(аналог комита)
+
+```
+target_metadata = [auth_meta]
+```
+
+Проводим миграцию
+
+```
+alembic upgrade head 
+```

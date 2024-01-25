@@ -10,10 +10,7 @@ from alembic import context
 sys.path.append(os.path.join(sys.path[0], 'src'))
 from src.config import DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER
 from src.auth.models import metadata as auth_meta
-from src.product.models import metadata as product_meta
-from src.warehouse.models import metadata as warehouse_meta
-from src.product_documents.models import metadata as product_documents_meta
-from src.entrance.models import metadata as entrance_meta
+
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -35,7 +32,7 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = [auth_meta, product_meta, warehouse_meta, product_documents_meta, entrance_meta]
+target_metadata = [auth_meta]
 
 
 # other values from the config, defined by the needs of env.py,
